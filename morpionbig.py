@@ -91,3 +91,7 @@ def check_diag2(grid, player, win_cond):
         for col in range(len(grid[row])):
             if all(grid[row + i][col - i] == player for i in range(win_cond)):
                 return True
+            
+
+if __name__ == "__main__":
+    game()
