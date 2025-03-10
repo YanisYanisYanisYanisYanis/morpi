@@ -1,3 +1,5 @@
+from grid_generator import *
+
 def game():
     grid_size = get_grid_size()
     win_cond = get_win_cond(grid_size)
@@ -33,27 +35,6 @@ def get_win_cond(grid_size):
 def get_players():
     n = int(input('How many players? '))
     return list(range(1, n + 1))
-
-def print_grid(grid):
-    for el in grid:
-        res = "["
-        for i in range (len(el)-1):
-            res += str(el[i]) + " "
-        res += str(el[len(el)-1])
-        res += "]"
-        print(res)
-
-def generate_grid(n):
-    result = []
-    for _ in range (n):
-        result.append([0] * n)
-    return result
-
-def add_pattern(x_start,y_start,pattern,grid):
-    for i in range (len(pattern)):
-        for j in range (len(pattern[i])):
-            if pattern[i][j] >= 0:
-                grid[y_start+i][x_start+j] = pattern[i][j]
 
 def player_move(grid, player, win_cond):
     check_move(grid, player)
